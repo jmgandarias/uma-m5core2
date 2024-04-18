@@ -1,19 +1,29 @@
-# m5Stack Core2
+# UMA m5Stack Core2
 
-HRII repository for the M5stack Core2 device
+University of Malaga repository for the M5stack Core2 device. With an special focus on using it in ROS projects.
 
 The M5Stack Core2 Documentation can be found [here](https://docs.m5stack.com/en/core/core2).
 
-The M5Core2 github repo is added as a submodule in M5Core2 @ 747fca2e
+**Author:** [Juan M.Gandarias](https://jmgandarias.com)<br />
+**Affiliation:** [University of Málaga](https://www.uma.es)<br />
+**Maintainer:** Juan M. Gandarias, jmgandarias@uma.es
+
+The work on this repository started during my postdoc period at [HRII](https://hri.iit.it), [IIT](https://iit.it).<br />
+This repo won't exist without the help of the best IIT technicians [Mattia Leonori](https://github.com/mleonori), and [Pietro Balatti](https://github.com/pietrobalatti).
+
 
 ## Table of Contents
-
-- [Drivers](#Drivers)
-- [Arduino IDE Setup](#Arduino-IDE-Setup)
-- [Avoid Arduino IDE](#Avoid-Arduino-IDE)
-- [Install HriiM5Core2 Library](#Install-HriiM5Core2-library)
-- [Rosserial WiFi](#Rosserial-WiFi)
-- [Troubleshooting](#Troubleshooting)
+- [UMA m5Stack Core2](#uma-m5stack-core2)
+  - [Table of Contents](#table-of-contents)
+  - [Drivers](#drivers)
+  - [Arduino IDE Setup](#arduino-ide-setup)
+  - [Avoid Arduino IDE](#avoid-arduino-ide)
+  - [Install UMAM5Core2 library](#install-umam5core2-library)
+  - [ROSSerial WiFi](#rosserial-wifi)
+  - [Troubleshooting](#troubleshooting)
+    - [Error 1](#error-1)
+    - [Error 2](#error-2)
+    - [Error 3](#error-3)
 
 ## Drivers
 <details>
@@ -53,7 +63,7 @@ mkdir Arduino
 mkdir Arduino_IDE_folder
 ```
 
-Install any version of the Arduino IDE above 1.8.15 (Arduino IDE 2.0 and above are not yet supported at 18/10/2022)
+Install any version of the Arduino IDE above 1.8.15 (Arduino IDE 2.0 and above are not yet supported at 18/10/2022).
 [Here](https://downloads.arduino.cc/arduino-1.8.19-linux64.tar.xz) you can download the version 1.8.19
 
 Once downloaded, copy and decompress the content of the file in /home/$USER/Arduino_IDE_folder.
@@ -64,7 +74,7 @@ cd Arduino_IDE_folder
 sudo ./install.sh
 ```
 
-Once install, you can open it 
+Once installed, you can open it 
 ```
 ./arduino
 ```
@@ -100,18 +110,18 @@ cat /dev/ttyACM*
 ```
 </details>
 
-## Install HriiM5Core2 library
+## Install UMAM5Core2 library
 <details>
 <summary><em>click to expand</em></summary>
 
 Clone the repo inside the Arduino libraries folder.
 ```
 cd ~/Arduino/libraries
-git_clone sensors/hrii_m5stack.git
+git clone git@github.com:jmgandarias/uma-m5core2.git
 ```
-Note that you'll only need to do this once. I.e., if you want to use the HriiM5Core2 library in a different project/catkin_ws, you don't need to include it everytime. But also note that if you remove the git folder from ~/Arduino/libraries, you'll have to create the link again.
+Note that you'll only need to do this once. I.e., if you want to use the UMAM5Core2 library in a different project/catkin_ws, you don't need to include it everytime. But also note that if you remove the git folder from ~/Arduino/libraries, you'll have to create the link again.
 Remember that if you (or someone else) has changed something in this repo that you'd like to include in your project, you must pull inside the folder 
-~/Arduino/libraries/hrii_m5stack. Doing git_pull_all in your catkin_ws will NOT pull the hrii_m5stack repo.
+~/Arduino/libraries/uma-m5core2. Doing git_pull_all in your catkin_ws will NOT pull the uma-m5core2 repo.
 
 To use this library you also need to install the rosserial library. You can follow the instructions in [this link](http://wiki.ros.org/rosserial_arduino/Tutorials/Arduino%20IDE%20Setup).
 

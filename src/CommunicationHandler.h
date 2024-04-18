@@ -1,7 +1,21 @@
-#ifndef __HRII_COMMUNICATION_HANDLER_H__
-#define __HRII_COMMUNICATION_HANDLER_H__
+/*
+Library for the communitacion handler
 
-namespace HRII
+Developer:  Juan M. Gandarias 
+            https://jmgandarias.com 
+            jmgandarias@uma.es
+
+Former developer: Mattia Leonori, 
+                  mattia.leonori@iit.it
+                    
+Data: 18/04/2024
+*/
+
+
+#ifndef __UMA_COMMUNICATION_HANDLER_H__
+#define __UMA_COMMUNICATION_HANDLER_H__
+
+namespace UMA
 {
 
   class CommunicationHandler
@@ -98,7 +112,7 @@ namespace HRII
     }
   }; // class CommunicationHandler
 
-} // namespace HRII
+} // namespace UMA
 
 class WiFiHardware
 {
@@ -126,8 +140,8 @@ public:
   }
 
 public:
-  HRII::CommunicationHandler comm_handler;
+  UMA::CommunicationHandler comm_handler;
 
 }; // class WiFiHardware
 
-#endif // __HRII_COMMUNICATION_HANDLER_H__
+#endif // __UMA_COMMUNICATION_HANDLER_H__

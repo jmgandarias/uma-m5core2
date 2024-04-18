@@ -1,5 +1,5 @@
 /*
-Example script of multitasking with ROS using the Hrii_M5Core2 library.
+Example script of multitasking with ROS using the UMA_M5Core2 library.
 The M5Core2 integrates an ESP32 micropocessor which has two cores.
 This script runs the following two tasks exploiting the multicore option of the ESP32:
  - Task1: Communication. One core will be fully dedicated to keep the communication using the ros library
@@ -9,28 +9,27 @@ For more info about multitaskng with M5Core2 and ESP32:
 - https://github.com/m5stack/M5Core2/blob/master/examples/Advanced/MultiTask/MultiTask.ino
 - https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/system/freertos.html
 
-Developer: Juan M. Gandarias (juan.gandarias@iit.it)
-Data: 04/09/2022
+Developer:  Juan M. Gandarias 
+            https://jmgandarias.com 
+            jmgandarias@uma.es
+
+Data: 18/04/2024
 */
+
 #include <ros.h>
-#include <HriiM5Core2.h>
+#include <UMAM5Core2.h>
 #include <std_msgs/Float32.h>
 
-// WiFi Network
-// char ssidDesired[] = "HRII_LAB";      // wifi network name
-// char password[] = "hriilabo";         // wifi network password
-// IPAddress client_ip(192, 168, 0, 40); // M5 IP
-// IPAddress server_ip(192, 168, 0, 13); // Roscore IP
 
-char ssidDesired[] = "FASTWEB-1-27DC9B"; // wifi network name
-char password[] = "909FBB1ECE";          // wifi network password
+char ssidDesired[] = "your_network_name"; // wifi network name
+char password[] = "your_network_password";          // wifi network password
 IPAddress client_ip(192, 168, 0, 40);    // M5 IP
 IPAddress server_ip(192, 168, 0, 157);   // Roscore IP
 
-HRII::CommunicationHandler comm_handler(ssidDesired, password);
+UMA::CommunicationHandler comm_handler(ssidDesired, password);
 
-IPAddress HRII::CommunicationHandler::client_ip_ = client_ip;
-IPAddress HRII::CommunicationHandler::server_ip_ = server_ip;
+IPAddress UMA::CommunicationHandler::client_ip_ = client_ip;
+IPAddress UMA::CommunicationHandler::server_ip_ = server_ip;
 
 // Auxiliar functions
 float publishSliderData(float prev_value, float current_value);

@@ -1,3 +1,13 @@
+/*
+Library for the slider
+
+Developer:  Juan M. Gandarias 
+            https://jmgandarias.com 
+            jmgandarias@uma.es
+                    
+Data: 18/04/2024
+*/
+
 #ifndef __SLIDER_H__
 #define __SLIDER_H__
 

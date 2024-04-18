@@ -1,8 +1,11 @@
 /*
 Example script to create an horizontal slide bar using the Slider.h library inside Hrii_M5Core2 library
 
-Developer: Juan M. Gandarias (juan.gandarias@iit.it)
-Data: 04/09/2022
+Developer:  Juan M. Gandarias 
+            https://jmgandarias.com 
+            jmgandarias@uma.es
+
+Data: 18/04/2024
 */
 
 #include <Slider.h>

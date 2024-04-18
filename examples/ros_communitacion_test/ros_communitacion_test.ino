@@ -1,8 +1,14 @@
 /*
 Example script to communicate with the M5Core2 via ROS.
 
-Developer: Mattia Leonori, Juan M. Gandarias ({mattia.leonori, juan.gandarias}@iit.it)
-Data: 04/06/2022
+Developer:  Juan M. Gandarias 
+            https://jmgandarias.com 
+            jmgandarias@uma.es
+
+Former developer: Mattia Leonori, 
+                  mattia.leonori@iit.it
+                    
+Data: 18/04/2024
 */
 
 #include <M5Core2.h>
@@ -12,8 +18,8 @@ Data: 04/06/2022
 #include <WiFi.h>
 
 // WiFi Network
-char ssidDesired[] = "HRII_LAB"; // wifi network name
-char password[] = "hriilabo";    // wifi network password
+char ssidDesired[] = "your_network_name"; // wifi network name
+char password[] = "your_network_password";    // wifi network password
 
 WiFiClient wifi_client;
 

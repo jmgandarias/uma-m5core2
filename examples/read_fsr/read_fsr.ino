@@ -12,24 +12,27 @@ R2 = 3.3kOhm
 Vout - G35(ADC) port of M5Core2
 -------------------------------
 
-Developer: Juan M. Gandarias (juan.gandarias@iit.it)
+Developer:  Juan M. Gandarias 
+            https://jmgandarias.com 
+            jmgandarias@uma.es
+
 Data: 04/08/2022
 */
 #include <ros.h>
 #include <std_msgs/Int16.h>
 #include <SPI.h>
-#include <HriiM5Core2.h>
+#include <UMAM5Core2.h>
 
 // WiFi Network
-char ssidDesired[] = "HRII_LAB";      // wifi network name
-char password[] = "hriilabo";         // wifi network password
+char ssidDesired[] = "your_network_name";      // wifi network name
+char password[] = "your_network_password";         // wifi network password
 IPAddress client_ip(192, 168, 0, 40); // M5 IP
 IPAddress server_ip(192, 168, 0, 13); // Roscore IP
 
-HRII::CommunicationHandler comm_handler(ssidDesired, password);
+UMA::CommunicationHandler comm_handler(ssidDesired, password);
 
-IPAddress HRII::CommunicationHandler::client_ip_ = client_ip;
-IPAddress HRII::CommunicationHandler::server_ip_ = server_ip;
+IPAddress UMA::CommunicationHandler::client_ip_ = client_ip;
+IPAddress UMA::CommunicationHandler::server_ip_ = server_ip;
 
 // FSR variables
 int force_raw = 0;

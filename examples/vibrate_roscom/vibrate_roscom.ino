@@ -2,25 +2,28 @@
 Example script to send a vibration to the M5core2 via ROS
 When an Empy msg is published in /toggle_led, the screen turns green and the device vibrates
 
-Developer: Juan M. Gandarias (juan.gandarias@iit.it)
-Data: 04/07/2022
+Developer:  Juan M. Gandarias 
+            https://jmgandarias.com 
+            jmgandarias@uma.es
+
+Data: 18/04/2024
 */
 
 #include <ros.h>
 #include <std_msgs/Empty.h>
 #include <SPI.h>
-#include <HriiM5Core2.h>
+#include <UMAM5Core2.h>
 
 // WiFi Network
-char ssidDesired[] = "HRII_LAB";      // wifi network name
-char password[] = "hriilabo";         // wifi network password
+char ssidDesired[] = "your_network_name";      // wifi network name
+char password[] = "your_network_password";         // wifi network password
 IPAddress client_ip(192, 168, 0, 40); // M5 IP
 IPAddress server_ip(192, 168, 0, 13); // Roscore IP
 
-HRII::CommunicationHandler comm_handler(ssidDesired, password);
+UMA::CommunicationHandler comm_handler(ssidDesired, password);
 
-IPAddress HRII::CommunicationHandler::client_ip_ = client_ip;
-IPAddress HRII::CommunicationHandler::server_ip_ = server_ip;
+IPAddress UMA::CommunicationHandler::client_ip_ = client_ip;
+IPAddress UMA::CommunicationHandler::server_ip_ = server_ip;
 
 // M5 LCD
 TFT_eSprite Img = TFT_eSprite(&M5.Lcd);

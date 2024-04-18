@@ -1,10 +1,15 @@
 /*
-Example script to test the communication handler
-with ROS and the M5core2
+Example script to test the communication handler with ROS and the M5core2
 
-Developer: Juan M. Gandarias, Mattia Leonori, Pietro Balatti
-({juan.gandarias, mattia.leonori, pietro.balatti}@iit.it)
-Data: 12/10/2022
+Developer:  Juan M. Gandarias 
+            https://jmgandarias.com 
+            jmgandarias@uma.es
+
+Former developers:  Mattia Leonori, 
+                    Pietro Balatti
+                    {mattia.leonori, pietro.balatti}@iit.it
+
+Data: 18/04/2024
 */
 
 #include <M5Core2.h>
@@ -16,15 +21,15 @@ Data: 12/10/2022
 void waitingScreen();
 
 // WiFi Network
-char ssidDesired[] = "HRII_LAB";      // wifi network name
-char password[] = "hriilabo";         // wifi network password
+char ssidDesired[] = "your_network_name";      // wifi network name
+char password[] = "your_network_password";         // wifi network password
 IPAddress client_ip(192, 168, 0, 40); // M5 IP
 IPAddress server_ip(192, 168, 0, 13); // Roscore IP
 
 HRII::CommunicationHandler comm_handler(ssidDesired, password);
 
-IPAddress HRII::CommunicationHandler::client_ip_ = client_ip;
-IPAddress HRII::CommunicationHandler::server_ip_ = server_ip;
+IPAddress UMA::CommunicationHandler::client_ip_ = client_ip;
+IPAddress UMA::CommunicationHandler::server_ip_ = server_ip;
 
 // Ros Node Handle
 ros::NodeHandle_<WiFiHardware> nh;

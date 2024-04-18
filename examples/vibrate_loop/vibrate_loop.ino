@@ -1,8 +1,11 @@
 /*
 Example script to set multiple vibrations levels in the M5core2
 
-Developer: Juan M. Gandarias (juan.gandarias@iit.it)
-Data: 04/07/2022
+Developer:  Juan M. Gandarias 
+            https://jmgandarias.com 
+            jmgandarias@uma.es
+
+Data: 18/04/2024
 */
 
 #include <M5Core2.h>
